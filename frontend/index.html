@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RideNaija - Book Affordable Road Trips Across Nigeria</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://img.icons8.com/color/48/000000/bus.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Top Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container">
+            <p><i class="fas fa-bullhorn"></i> Book your Christmas travels now! Enjoy 15% off on all Lagos-Abuja trips. <a href="#" onclick="quickBook('lagos-abuja')">Book Now →</a></p>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="main-nav">
+        <div class="container nav-container">
+            <!-- Logo -->
+            <a href="/" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-bus"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-accent">RideNaija</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="nav-menu">
+                <a href="/" class="nav-link active"><i class="fas fa-home"></i> Home</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link"><i class="fas fa-route"></i> Routes <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#popular-routes"><i class="fas fa-fire"></i> Popular Routes</a>
+                        <a href="#all-routes"><i class="fas fa-map"></i> All Routes</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" onclick="filterRoutesByRegion('south-west')"><i class="fas fa-road"></i> South West</a>
+                        <a href="#" onclick="filterRoutesByRegion('north-central')"><i class="fas fa-city"></i> North Central</a>
+                    </div>
+                </div>
+                <a href="#how-it-works" class="nav-link"><i class="fas fa-play-circle"></i> How it Works</a>
+                <a href="#" class="nav-link"><i class="fas fa-percent"></i> Promos</a>
+                <a href="#" class="nav-link"><i class="fas fa-question-circle"></i> Help</a>
+                <a href="#" class="nav-link"><i class="fas fa-phone-alt"></i> Contact</a>
+            </div>
+
+            <!-- User Actions -->
+            <div class="user-actions">
+                <!-- Dynamic content will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-bus"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-main">Ride</span>
+                    <span class="logo-accent">Naija</span>
+                </div>
+            </div>
+            <button class="close-menu"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="mobile-nav">
+            <a href="/" class="mobile-nav-link active"><i class="fas fa-home"></i> Home</a>
+            <a href="#popular-routes" class="mobile-nav-link"><i class="fas fa-fire"></i> Popular Routes</a>
+            <a href="#all-routes" class="mobile-nav-link"><i class="fas fa-map"></i> All Routes</a>
+            <a href="#how-it-works" class="mobile-nav-link"><i class="fas fa-play-circle"></i> How it Works</a>
+            <a href="#" class="mobile-nav-link"><i class="fas fa-percent"></i> Promos</a>
+            <a href="#" class="mobile-nav-link"><i class="fas fa-question-circle"></i> Help</a>
+            <a href="#" class="mobile-nav-link"><i class="fas fa-phone-alt"></i> Contact</a>
+            <div class="mobile-auth">
+                <!-- Dynamic content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-slider">
+            <div class="slide active" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Travel Across Nigeria<br><span class="highlight">With Confidence</span></h1>
+                        <p class="hero-subtitle">Find the cheapest road trips to any destination in Nigeria. Book with confidence, travel with ease.</p>
+                        <div class="hero-stats">
+                            <div class="stat">
+                                <span class="stat-number">50K+</span>
+                                <span class="stat-label">Happy Travelers</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">100+</span>
+                                <span class="stat-label">Routes</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">24/7</span>
+                                <span class="stat-label">Support</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1566140967404-b8b3932483f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Experience<br><span class="highlight">Comfortable Journeys</span></h1>
+                        <p class="hero-subtitle">Luxury buses with WiFi, charging ports, and onboard entertainment for your comfort.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-slider-controls">
+            <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Booking Widget -->
+    <section class="booking-widget">
+        <div class="container">
+            <div class="widget-container">
+                <div class="widget-tabs">
+                    <button class="widget-tab active" data-tab="one-way">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>One Way</span>
+                    </button>
+                    <button class="widget-tab" data-tab="round-trip">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Round Trip</span>
+                    </button>
+                    <button class="widget-tab" data-tab="multi-city">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span>Multi City</span>
+                    </button>
+                </div>
+
+                <div class="widget-content">
+                    <div class="tab-content active" id="one-way">
+                        <form class="booking-form" id="bookingForm">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>From</span>
+                                    </label>
+                                    <div class="city-selector">
+                                        <select class="form-control" id="departureCity">
+                                            <option value="">Select departure city</option>
+                                            <option value="lagos">Lagos</option>
+                                            <option value="abuja">Abuja</option>
+                                            <option value="portharcourt">Port Harcourt</option>
+                                            <option value="ibadan">Ibadan</option>
+                                            <option value="kano">Kano</option>
+                                            <option value="enugu">Enugu</option>
+                                            <option value="benin">Benin City</option>
+                                            <option value="calabar">Calabar</option>
+                                            <option value="ilorin">Ilorin</option>
+                                            <option value="jos">Jos</option>
+                                            <option value="maiduguri">Maiduguri</option>
+                                            <option value="sokoto">Sokoto</option>
+                                            <option value="oyo">Oyo</option>
+                                            <option value="abeokuta">Abeokuta</option>
+                                            <option value="owerri">Owerri</option>
+                                            <option value="akure">Akure</option>
+                                            <option value="minna">Minna</option>
+                                            <option value="bauchi">Bauchi</option>
+                                        </select>
+                                        <div class="city-image">
+                                            <img id="departureImage" src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="City">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="swap-cities">
+                                    <button type="button" class="swap-btn" id="swapCities">
+                                        <i class="fas fa-exchange-alt"></i>
+                                    </button>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>To</span>
+                                    </label>
+                                    <div class="city-selector">
+                                        <select class="form-control" id="destinationCity">
+                                            <option value="">Select destination city</option>
+                                            <option value="abuja">Abuja</option>
+                                            <option value="lagos">Lagos</option>
+                                            <option value="portharcourt">Port Harcourt</option>
+                                            <option value="ibadan">Ibadan</option>
+                                            <option value="kano">Kano</option>
+                                            <option value="enugu">Enugu</option>
+                                            <option value="benin">Benin City</option>
+                                            <option value="calabar">Calabar</option>
+                                            <option value="ilorin">Ilorin</option>
+                                            <option value="jos">Jos</option>
+                                            <option value="maiduguri">Maiduguri</option>
+                                            <option value="sokoto">Sokoto</option>
+                                            <option value="oyo">Oyo</option>
+                                            <option value="abeokuta">Abeokuta</option>
+                                            <option value="owerri">Owerri</option>
+                                            <option value="akure">Akure</option>
+                                            <option value="minna">Minna</option>
+                                            <option value="bauchi">Bauchi</option>
+                                        </select>
+                                        <div class="city-image">
+                                            <img id="destinationImage" src="https://images.unsplash.com/photo-1566140967404-b8b3932483f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="City">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <span>Departure Date</span>
+                                    </label>
+                                    <div class="date-selector">
+                                        <input type="date" class="form-control" id="departureDate">
+                                        <div class="date-options">
+                                            <button type="button" class="date-option" data-days="0">Today</button>
+                                            <button type="button" class="date-option" data-days="1">Tomorrow</button>
+                                            <button type="button" class="date-option" data-days="7">Next Week</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <i class="fas fa-user-friends"></i>
+                                        <span>Passengers</span>
+                                    </label>
+                                    <div class="passenger-selector">
+                                        <div class="passenger-type">
+                                            <span class="passenger-label">Adults (12+)</span>
+                                            <div class="passenger-controls">
+                                                <button type="button" class="passenger-btn minus">-</button>
+                                                <span class="passenger-count" id="adultCount">1</span>
+                                                <button type="button" class="passenger-btn plus">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="passenger-type">
+                                            <span class="passenger-label">Children (2-11)</span>
+                                            <div class="passenger-controls">
+                                                <button type="button" class="passenger-btn minus">-</button>
+                                                <span class="passenger-count" id="childCount">0</span>
+                                                <button type="button" class="passenger-btn plus">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="passenger-summary">
+                                            <span id="totalPassengers">1 Passenger</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary btn-lg btn-search">
+                                    <i class="fas fa-search"></i>
+                                    <span>SEARCH TRIPS</span>
+                                </button>
+                                <div class="form-extras">
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="studentDiscount">
+                                        <span class="checkmark"></span>
+                                        <span>Student Discount</span>
+                                    </label>
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="returnTrip">
+                                        <span class="checkmark"></span>
+                                        <span>Add Return Trip</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Round Trip Content (initially hidden) -->
+                    <div class="tab-content" id="round-trip">
+                        <!-- Content will be generated dynamically -->
+                    </div>
+
+                    <!-- Multi City Content (initially hidden) -->
+                    <div class="tab-content" id="multi-city">
+                        <!-- Content will be generated dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Results Section -->
+    <section id="searchResults" class="search-results" style="display: none;">
+        <!-- Search results will be loaded here -->
+    </section>
+
+    <!-- Popular Routes -->
+    <section class="popular-routes" id="popular-routes">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Popular <span class="highlight">Routes</span></h2>
+                <p class="section-subtitle">Most traveled routes with competitive prices and frequent departures</p>
+                <div class="section-actions">
+                    <button class="btn btn-outline view-all">View All Routes</button>
+                </div>
+            </div>
+
+            <div class="routes-grid">
+                <!-- Route 1: Lagos - Abuja -->
+                <div class="route-card premium">
+                    <div class="route-badge">
+                        <span>BEST SELLER</span>
+                    </div>
+                    <div class="route-image">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Lagos Skyline">
+                        <div class="route-overlay">
+                            <span class="route-distance">~ 700km</span>
+                            <span class="route-duration">10-12 hours</span>
+                        </div>
+                    </div>
+                    <div class="route-content">
+                        <div class="route-header">
+                            <h3 class="route-title">Lagos ⇌ Abuja</h3>
+                            <div class="route-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                        <p class="route-description">The busiest route in Nigeria with multiple daily departures from luxury transport companies.</p>
+                        <div class="route-features">
+                            <span class="feature"><i class="fas fa-wifi"></i> WiFi</span>
+                            <span class="feature"><i class="fas fa-snowflake"></i> AC</span>
+                            <span class="feature"><i class="fas fa-tv"></i> Entertainment</span>
+                            <span class="feature"><i class="fas fa-utensils"></i> Refreshments</span>
+                        </div>
+                        <div class="route-footer">
+                            <div class="route-price">
+                                <span class="price-from">From</span>
+                                <span class="price-amount">₦15,000</span>
+                                <span class="price-note">per person</span>
+                            </div>
+                            <button class="btn btn-primary btn-book" data-route="lagos-abuja">Book Now</button>
+                        </div>
+                        <div class="route-companies">
+                            <div class="company-badge">
+                                <img src="https://img.icons8.com/color/48/000000/bus.png" alt="GIGM">
+                                <span>GIGM</span>
+                            </div>
+                            <div class="company-badge">
+                                <img src="https://img.icons8.com/color/48/000000/bus.png" alt="ABC">
+                                <span>ABC</span>
+                            </div>
+                            <div class="company-badge">
+                                <img src="https://img.icons8.com/color/48/000000/bus.png" alt="Chisco">
+                                <span>Chisco</span>
+                            </div>
+                            <span class="more-companies">+5 more</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Route 2: Port Harcourt - Lagos -->
+                <div class="route-card">
+                    <div class="route-image">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Port Harcourt">
+                        <div class="route-overlay">
+                            <span class="route-distance">~ 600km</span>
+                            <span class="route-duration">8-10 hours</span>
+                        </div>
+                    </div>
+                    <div class="route-content">
+                        <div class="route-header">
+                            <h3 class="route-title">Port Harcourt ⇌ Lagos</h3>
+                            <div class="route-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.6</span>
+                            </div>
+                        </div>
+                        <p class="route-description">Connect Nigeria's oil capital to its commercial hub with comfortable executive buses.</p>
+                        <div class="route-features">
+                            <span class="feature"><i class="fas fa-wifi"></i> WiFi</span>
+                            <span class="feature"><i class="fas fa-snowflake"></i> AC</span>
+                            <span class="feature"><i class="fas fa-plug"></i> Charging</span>
+                        </div>
+                        <div class="route-footer">
+                            <div class="route-price">
+                                <span class="price-from">From</span>
+                                <span class="price-amount">₦12,500</span>
+                                <span class="price-note">per person</span>
+                            </div>
+                            <button class="btn btn-primary btn-book" data-route="portharcourt-lagos">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Route 3: Ibadan - Abuja -->
+                <div class="route-card">
+                    <div class="route-image">
+                        <img src="https://images.unsplash.com/photo-1566140967404-b8b3932483f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Ibadan">
+                        <div class="route-overlay">
+                            <span class="route-distance">~ 600km</span>
+                            <span class="route-duration">9-11 hours</span>
+                        </div>
+                    </div>
+                    <div class="route-content">
+                        <div class="route-header">
+                            <h3 class="route-title">Ibadan ⇌ Abuja</h3>
+                            <div class="route-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.5</span>
+                            </div>
+                        </div>
+                        <p class="route-description">Travel from Nigeria's largest city by land area to the federal capital territory.</p>
+                        <div class="route-features">
+                            <span class="feature"><i class="fas fa-snowflake"></i> AC</span>
+                            <span class="feature"><i class="fas fa-tv"></i> Entertainment</span>
+                            <span class="feature"><i class="fas fa-utensils"></i> Refreshments</span>
+                        </div>
+                        <div class="route-footer">
+                            <div class="route-price">
+                                <span class="price-from">From</span>
+                                <span class="price-amount">₦13,500</span>
+                                <span class="price-note">per person</span>
+                            </div>
+                            <button class="btn btn-primary btn-book" data-route="ibadan-abuja">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Route 4: Kano - Lagos -->
+                <div class="route-card">
+                    <div class="route-badge">
+                        <span>LONG DISTANCE</span>
+                    </div>
+                    <div class="route-image">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Kano">
+                        <div class="route-overlay">
+                            <span class="route-distance">~ 1,100km</span>
+                            <span class="route-duration">15-18 hours</span>
+                        </div>
+                    </div>
+                    <div class="route-content">
+                        <div class="route-header">
+                            <h3 class="route-title">Kano ⇌ Lagos</h3>
+                            <div class="route-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.4</span>
+                            </div>
+                        </div>
+                        <p class="route-description">Connect Northern Nigeria's commercial hub to Lagos with sleeper buses available.</p>
+                        <div class="route-features">
+                            <span class="feature"><i class="fas fa-bed"></i> Sleeper</span>
+                            <span class="feature"><i class="fas fa-wifi"></i> WiFi</span>
+                            <span class="feature"><i class="fas fa-snowflake"></i> AC</span>
+                        </div>
+                        <div class="route-footer">
+                            <div class="route-price">
+                                <span class="price-from">From</span>
+                                <span class="price-amount">₦18,000</span>
+                                <span class="price-note">per person</span>
+                            </div>
+                            <button class="btn btn-primary btn-book" data-route="kano-lagos">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Routes Section -->
+    <section class="all-routes" id="all-routes">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Explore <span class="highlight">All Routes</span></h2>
+                <p class="section-subtitle">Discover road trips across all 36 states in Nigeria</p>
+            </div>
+
+            <div class="routes-filter">
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-region="all">All Regions</button>
+                    <button class="filter-tab" data-region="south-west">South West</button>
+                    <button class="filter-tab" data-region="south-east">South East</button>
+                    <button class="filter-tab" data-region="south-south">South South</button>
+                    <button class="filter-tab" data-region="north-central">North Central</button>
+                    <button class="filter-tab" data-region="north-east">North East</button>
+                    <button class="filter-tab" data-region="north-west">North West</button>
+                </div>
+
+                <div class="filter-search">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search routes or cities..." id="routeSearch">
+                    </div>
+                </div>
+            </div>
+
+            <div class="routes-table">
+                <div class="table-header">
+                    <div class="table-row">
+                        <div class="table-cell">Route</div>
+                        <div class="table-cell">Distance</div>
+                        <div class="table-cell">Duration</div>
+                        <div class="table-cell">Price From</div>
+                        <div class="table-cell">Companies</div>
+                        <div class="table-cell">Action</div>
+                    </div>
+                </div>
+                <div class="table-body" id="routesTable">
+                    <!-- Routes will be loaded dynamically -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How <span class="highlight">RideNaija</span> Works</h2>
+                <p class="section-subtitle">Book your trip in 4 simple steps</p>
+            </div>
+
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-search-location"></i>
+                    </div>
+                    <h3 class="step-title">Search & Compare</h3>
+                    <p class="step-description">Enter your route and dates to find all available trips with real-time prices.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-chair"></i>
+                    </div>
+                    <h3 class="step-title">Select & Book</h3>
+                    <p class="step-description">Choose your preferred trip, select seats, and make secure payment.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-ticket-alt"></i>
+                    </div>
+                    <h3 class="step-title">Get E-Ticket</h3>
+                    <p class="step-description">Receive e-ticket via email and SMS. No printing needed!</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">
+                        <i class="fas fa-bus"></i>
+                    </div>
+                    <h3 class="step-title">Travel & Enjoy</h3>
+                    <p class="step-description">Present your ticket at the park and enjoy your comfortable journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Safe & Secure</h3>
+                    <p>Verified transport partners with safety ratings and insurance coverage.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <h3>Best Price Guarantee</h3>
+                    <p>We guarantee the lowest prices for all routes across Nigeria.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock customer support via phone, chat, and email.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Easy Cancellation</h3>
+                    <p>Flexible cancellation and rescheduling options available.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our <span class="highlight">Travelers</span> Say</h2>
+                <p class="section-subtitle">Trusted by thousands of Nigerians</p>
+            </div>
+
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"RideNaija saved me ₦5,000 on my Lagos-Abuja trip! The booking was seamless and the driver was professional."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Aisha Bello">
+                        <div class="author-info">
+                            <h4>Aisha Bello</h4>
+                            <p>Frequent Traveler</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="testimonial-text">"As a student, finding affordable transport was always difficult. RideNaija always shows me the cheapest options."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Chinedu Okoro">
+                        <div class="author-info">
+                            <h4>Chinedu Okoro</h4>
+                            <p>University Student</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"The customer service is exceptional! They helped me reschedule my trip when I had an emergency."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Funke Adebayo">
+                        <div class="author-info">
+                            <h4>Funke Adebayo</h4>
+                            <p>Business Woman</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transport Partners -->
+    <section class="partners">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Trusted <span class="highlight">Transport Partners</span></h2>
+                <p class="section-subtitle">We partner with Nigeria's leading transport companies</p>
+            </div>
+
+            <div class="partners-grid">
+                <div class="partner-logo">
+                    <img src="https://via.placeholder.com/150x60/7B2CBF/FFFFFF?text=GIGM" alt="God is Good Motors">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://via.placeholder.com/150x60/DC3545/FFFFFF?text=ABC+Trans" alt="ABC Transport">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://via.placeholder.com/150x60/28A745/FFFFFF?text=Chisco" alt="Chisco Transport">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://via.placeholder.com/150x60/FFC107/000000?text=YSG" alt="Young Shall Grow">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://via.placeholder.com/150x60/17A2B8/FFFFFF?text=Peace" alt="Peace Mass Transit">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://via.placeholder.com/150x60/343A40/FFFFFF?text=Ifesinachi" alt="Ifesinachi">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Travel Across Nigeria?</h2>
+                <p class="cta-subtitle">Download our mobile app for exclusive deals and easier booking</p>
+                <div class="cta-buttons">
+                    <a href="#" class="app-btn">
+                        <i class="fab fa-google-play"></i>
+                        <div>
+                            <span>GET IT ON</span>
+                            <strong>Google Play</strong>
+                        </div>
+                    </a>
+                    <a href="#" class="app-btn">
+                        <i class="fab fa-app-store"></i>
+                        <div>
+                            <span>Download on the</span>
+                            <strong>App Store</strong>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-bus"></i>
+                        </div>
+                        <div class="logo-text">
+                            <span class="logo-main">Ride</span>
+                            <span class="logo-accent">Naija</span>
+                        </div>
+                    </div>
+                    <p class="footer-about">Your trusted partner for affordable road transportation across Nigeria. Book with confidence, travel with ease.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="#popular-routes">Popular Routes</a></li>
+                        <li><a href="#all-routes">All Routes</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#">Promotions</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="footer-title">Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Partner With Us</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="footer-title">Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Cancellation Policy</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="#">Safety Guidelines</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Transport Avenue, Ikeja, Lagos</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+234 800 123 4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>support@ridenaija.ng</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>24/7 Customer Support</span>
+                        </div>
+                    </div>
+                    <div class="newsletter">
+                        <h4>Subscribe to Newsletter</h4>
+                        <div class="newsletter-form">
+                            <input type="email" placeholder="Your email address">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="payment-methods">
+                    <span>We Accept:</span>
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-cc-amazon-pay"></i>
+                    <i class="fab fa-cc-apple-pay"></i>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2024 RideNaija. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Payment Page (Hidden by default) -->
+    <div id="paymentPage" class="page" style="display: none;">
+        <div class="container">
+            <div class="page-header">
+                <h1>Complete Your Payment</h1>
+                <p>Secure payment processing for your booking</p>
+            </div>
+            <div id="paymentContainer">
+                <!-- Payment content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Bookings Page (Hidden by default) -->
+    <div id="bookingsPage" class="page" style="display: none;">
+        <div class="container">
+            <div class="page-header">
+                <h1>My Bookings</h1>
+                <p>View and manage your trip bookings</p>
+            </div>
+            <div id="bookingsContainer">
+                <!-- Bookings will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals (Login, Signup) -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Login to Your Account</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="loginEmail" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="loginPassword" class="form-control" required>
+                </div>
+                <div class="form-options">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+                <div class="modal-divider">
+                    <span>or continue with</span>
+                </div>
+                <div class="social-login">
+                    <button type="button" class="btn btn-google">
+                        <i class="fab fa-google"></i> Google
+                    </button>
+                    <button type="button" class="btn btn-facebook">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </button>
+                </div>
+                <p class="modal-footer-text">Don't have an account? <a href="#" id="switchToSignup">Sign Up</a></p>
+            </form>
+        </div>
+    </div>
+
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Create Your Account</h2>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="signupName" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="signupEmail" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="signupPhone" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="signupPassword" class="form-control" required>
+                </div>
+                <div class="form-options">
+                    <label class="checkbox">
+                        <input type="checkbox" required>
+                        <span>I agree to the <a href="#">Terms & Conditions</a></span>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+                <p class="modal-footer-text">Already have an account? <a href="#" id="switchToLogin">Log In</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Toast -->
+    <div id="successToast" class="toast">
+        <div class="toast-content">
+            <i class="fas fa-check-circle"></i>
+            <span id="toastMessage">Operation successful!</span>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

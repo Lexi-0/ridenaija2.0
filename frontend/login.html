@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - RideNaija 2.0</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <div class="logo-icon">RN</div>
+                <div class="logo-text">RideNaija</div>
+            </a>
+            <a href="/" class="btn btn-outline">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+        </div>
+    </nav>
+
+    <!-- Login Form -->
+    <div class="auth-container">
+        <div class="auth-header">
+            <h1>Welcome Back</h1>
+            <p class="text-muted">Login to your RideNaija account</p>
+        </div>
+        
+        <!-- Error Message -->
+        <div id="loginError" class="error-message"></div>
+        
+        <!-- Login Form -->
+        <form id="loginForm">
+            <div class="form-group">
+                <label class="form-label" for="loginEmail">
+                    <i class="fas fa-envelope"></i> Email Address
+                </label>
+                <input type="email" 
+                       class="form-control" 
+                       id="loginEmail" 
+                       placeholder="Enter your email" 
+                       required>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label" for="loginPassword">
+                    <i class="fas fa-lock"></i> Password
+                </label>
+                <input type="password" 
+                       class="form-control" 
+                       id="loginPassword" 
+                       placeholder="Enter your password" 
+                       required>
+            </div>
+            
+            <div class="form-group">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="rememberMe">
+                    <label class="form-check-label" for="rememberMe">
+                        Remember me
+                    </label>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+                <i class="fas fa-sign-in-alt"></i> Login to Account
+            </button>
+        </form>
+        
+        <div class="text-center mt-3">
+            <p>
+                <a href="/forgot-password" class="text-primary">
+                    <i class="fas fa-key"></i> Forgot Password?
+                </a>
+            </p>
+            <p>
+                Don't have an account? 
+                <a href="/register" class="text-primary">Sign up here</a>
+            </p>
+        </div>
+        
+        <div class="text-center mt-3">
+            <p class="text-muted">Or login with</p>
+            <div class="d-flex justify-content-center gap-2">
+                <button class="btn btn-outline">
+                    <i class="fab fa-google"></i> Google
+                </button>
+                <button class="btn btn-outline">
+                    <i class="fab fa-facebook"></i> Facebook
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
