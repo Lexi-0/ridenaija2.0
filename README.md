@@ -1,4 +1,4 @@
-# NaijaTransit - Road Transport Booking Platform
+# Ridenaija - Road Transport Booking Platform
 
 A full-stack web application for booking affordable road trips across Nigeria.
 
