@@ -1,4 +1,4 @@
-# NaijaTransit - Road Transport Booking Platform
+# Ridenaija - Road Transport Booking Platform
 
 A full-stack web application for booking affordable road trips across Nigeria. This platform allows users to search, compare, and book trips from various transport companies with integrated payment processing.
 
@@ -8,12 +8,9 @@ A full-stack web application for booking affordable road trips across Nigeria. T
 
 - **User Authentication** - Secure login and registration system
 - **Trip Search & Booking** - Search trips by route, date, and price
-- **Seat Selection** - Choose specific seats before booking
 - **Payment Integration** - Paystack payment gateway for secure transactions
-- **Admin Dashboard** - Manage trips, bookings, and transport companies
 - **Email Notifications** - Automated confirmation and booking emails
 - **Responsive Design** - Works on desktop, tablet, and mobile devices
-- **Transport Company Management** - Add and manage multiple transport operators
 - **Booking History** - Users can view their past and upcoming trips
 
 ---
@@ -42,23 +39,6 @@ Before you start, make sure you have:
 
 ---
 
-## 📁 Project Structure
-
-```
-NaijaTransit/
-├── app.py                 # Flask backend application
-├── ridenaija.db          # SQLite database (stores all data)
-├── requirements.txt      # Python package dependencies
-├── index.html            # Home page
-├── login.html            # User login page
-├── booking.html          # Trip booking page
-├── payment.html          # Payment page
-├── script.js             # Frontend JavaScript logic
-├── style.css             # Frontend styling
-└── README.md             # This file
-```
-
----
 
 ## 🚀 Quick Start Guide
 
@@ -68,8 +48,8 @@ On macOS, open Terminal and run:
 
 ```bash
 # Create a project folder
-mkdir NaijaTransit
-cd NaijaTransit
+mkdir Ridenaija
+cd Ridenaija
 
 # Copy all your files into this folder
 # (Place app.py, requirements.txt, HTML files, CSS, JS, and ridenaija.db here)
@@ -110,7 +90,7 @@ Open your web browser and go to:
 http://localhost:5000
 ```
 
-You should see the NaijaTransit home page!
+You should see the Ridenaija home page!
 
 ---
 
@@ -120,106 +100,10 @@ Your application uses **SQLite database** (`ridenaija.db`):
 
 - **User accounts** - Names, emails, passwords, phone numbers
 - **Trip information** - Routes, schedules, prices, available seats
-- **Bookings** - Passenger bookings, seat selections, payment status
+- **Bookings** - Passenger bookings, payment status
 - **Transport companies** - Company details and ratings
 
 All data entered through the web forms is automatically saved to `ridenaija.db`.
-
----
-
-## 👤 Default Admin Account
-
-The database comes with a default admin account:
-
-```
-Email: admin@ridenaija.ng
-Password: admin123
-```
-
-⚠️ **Important:** Change this password immediately after first login!
-
----
-
-## 🔐 How to Update Your Code and Push to Git
-
-### Make Changes Locally
-
-1. Edit your files (HTML, CSS, JavaScript, Python)
-2. Test in your browser to make sure everything works
-
-### Push Changes to Git
-
-```bash
-# Stage all changes
-git add .
-
-# Commit your changes with a message
-git commit -m "Update: describe what you changed"
-
-# Push to your repository
-git push origin main
-```
-
-Example commit messages:
-```bash
-git commit -m "Update: added new booking features"
-git commit -m "Fix: corrected login validation"
-git commit -m "Feature: integrated Paystack payment"
-```
-
----
-
-## 📖 Using the Application
-
-### For Passengers
-
-1. **Register/Login** - Create an account or login with existing credentials
-2. **Search Trips** - Enter departure and arrival locations, select date
-3. **View Options** - See available trips with prices and ratings
-4. **Book Trip** - Select seats and confirm booking
-5. **Make Payment** - Complete payment via Paystack
-6. **Confirmation** - Receive booking confirmation via email
-
-### For Admins
-
-1. Login with admin credentials
-2. Access admin dashboard
-3. **Manage Trips** - Add, edit, or cancel trips
-4. **Manage Companies** - Add transport companies
-5. **View Bookings** - Monitor all passenger bookings
-6. **Generate Reports** - View revenue and occupancy statistics
-
----
-
-## 🔧 Configuration Files
-
-### `requirements.txt`
-Lists all Python packages needed. If you add new packages, update this file:
-
-```bash
-pip freeze > requirements.txt
-```
-
-### `app.py`
-Main Flask application. Contains:
-- Routes (URLs)
-- Database connections
-- API endpoints
-- Business logic
-
-### `style.css`
-Frontend styling with purple theme:
-- Buttons
-- Forms
-- Navigation bar
-- Responsive design
-
-### `script.js`
-Frontend JavaScript:
-- Form validation
-- API calls
-- User interactions
-- Payment processing
 
 ---
 
@@ -349,12 +233,6 @@ To contribute to this project:
 - `script.js` - JavaScript functionality
 - `style.css` - Styling
 
-### ❌ Remove These:
-- `db_config.php` - It's PHP, you're using Python
-- Duplicate `README.md` files - Keep only one
-- `LICENSE` - Only if not open-sourcing
-- `database.sql` - Already in your SQLite database
-
 ---
 
 ## 🔒 Security Best Practices
@@ -404,11 +282,9 @@ This project is proprietary. All rights reserved.
   - User authentication
   - Trip booking system
   - Payment integration
-  - Admin dashboard
 
 ---
 
-**Happy coding! 🚀**
 
 For updates, always remember to:
 ```bash
